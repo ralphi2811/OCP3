@@ -1,21 +1,14 @@
 <?php
 
-include('../config/database.php');
 
-function dbConnect()  
-{    
+function dbconnect()
+{
+    include '../config/database.php';    
     
-    
-    
-    try
-    {
-        $db = new PDO(***METRE A JOUR ICI***);
-        
-        return $db;
-    }
-    catch(Exception $e)
-    {
-        die('Erreur : '.$e->getMessage());
+    try {
+        $bdd = new PDO('\'mysql:host='.$db_host.';dbname='.$db_name.';charset=utf8\'', $db_user, $db_pass);
+        return $bdd;
+    } catch (Exception $ex) {
+        die('Erreur : '.$ex->getMessage());
     }
 }
-
