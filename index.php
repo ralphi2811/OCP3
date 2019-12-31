@@ -1,11 +1,11 @@
 <?php
-require('model/frontend.php');
-include('/config/database.php');
+require 'config/database.php';
 
-echo 'Bonjour le monde ! 5 :)<br>';
+echo 'Hello World !<br>';
 
+$test = dbconnect();
 
-
+echo $test;
 
 
 ?>
