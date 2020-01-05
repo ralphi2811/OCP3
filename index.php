@@ -1,14 +1,23 @@
 <?php
+session_start();
+
 require 'controller/frontend.php';
 
-$password = $_GET['pass'];
+try {
+    if (isset($_SESSION['userId'])) {
+        if ($_SESSION['userId'] > 0) {
+            // utilisateur identifié acces a la la page description
+        }
+    }
+ else {
+    // affichege page login
+     
+    }
+    
+} catch (Exception $ex) {
+    
+}
 
-
-echo $password;
-
-echo '<br>';
-
-echo hashPassword($password);
 
 ?>
 
