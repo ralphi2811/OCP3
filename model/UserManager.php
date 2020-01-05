@@ -3,6 +3,7 @@
 class UserManager
 {
     public function userLogin($username, $password) {
+        $db = $this->dbConnect();
         
     }
     
