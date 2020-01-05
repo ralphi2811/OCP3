@@ -15,15 +15,18 @@
             <div>
                 <input type="submit" value="S'identifier">
             </div>
-            <div>
-                <a href="index.php?action=lostpassword">Mot de passe oublié ?</a>
-            </div>
-            <div>
-                <a href="index.php?action=createaccount">Créer un compte</a>
-            </div>
+            
         </form>
+        <div>
+            <a href="index.php?action=lostpassword">Mot de passe oublié ?</a>
+        </div>
+        <div>
+            <a href="index.php?action=createaccount">Créer un compte</a>
+        </div>
     </div>
 </div>
 
+<?php $content = ob_clean(); ?>
 
+<?php require 'template.php'; ?>
 
