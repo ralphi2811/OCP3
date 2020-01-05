@@ -11,11 +11,11 @@ try {
     }
  else {
     // affichege page login
-     
+    loginUser(); 
     }
     
 } catch (Exception $ex) {
-    
+    echo 'Erreur : ' . $ex->getMessage();
 }
 
 
