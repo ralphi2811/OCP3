@@ -1,0 +1,31 @@
+body {
+    background-color: #658DC6;
+    display: flex;
+    flex-direction: column;
+}
+
+/* css login */
+
+.logo {
+    
+}
+
+.login {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px black;
+    text-align: center;
+    
+}
+
+#password, #username{
+    width: 90%;
+  
+}
+
+
+
