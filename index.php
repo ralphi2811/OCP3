@@ -1,12 +1,14 @@
 <?php
-require 'config/database.php';
+require 'controller/frontend.php';
 
-echo 'Hello World !<br>';
+$password = $_GET['pass'];
 
-$test = dbconnect();
 
-echo $test;
+echo $password;
 
+echo '<br>';
+
+echo hashPassword($password);
 
 ?>
 
