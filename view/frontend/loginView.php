@@ -1,5 +1,5 @@
 <?php $title = 'Login'; ?>
-<?php $style = 'public/css/style_login.css'
+
 <?php ob_start(); ?>
 <div class="login">
     <h1>GBAF Login</h1>
@@ -17,6 +17,9 @@
             </div>
             <div>
                 <a href="index.php?action=lostpassword">Mot de passe oublié ?</a>
+            </div>
+            <div>
+                <a href="index.php?action=createaccount">Créer un compte</a>
             </div>
         </form>
     </div>
