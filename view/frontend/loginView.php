@@ -13,7 +13,7 @@
                 <input type="password" id="password" name="password" placeholder="Mot de passe">
             </div>
             <div>
-                <input type="submit" value="S'identifier">
+                <input class="button" type="submit" value="S'identifier">
             </div>
             
         </form>

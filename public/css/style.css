@@ -49,7 +49,7 @@ h1 {
     display: none;
 }
 
-.login submit {
+.button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
