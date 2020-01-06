@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
 body {
     background-color: #658DC6;
     display: flex;
@@ -11,15 +13,19 @@ body {
 }
 
 .login {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px black;
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+  background-color: #ffffff; 
+  text-align: center;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+form {
+    padding: 45px;
+    margin: 0 auto 100px;
     text-align: center;
-    
 }
 
 #password, #username{
@@ -27,5 +33,33 @@ body {
   
 }
 
+.login input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #B5C7D3;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
 
+h1 {
+    display: none;
+}
 
+.login submit {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
