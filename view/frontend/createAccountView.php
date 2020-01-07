@@ -17,7 +17,7 @@
             </select>
             <input type="text" name="answer" placeholder="Réponse"/>
             <input class="button" type="submit" value="créer un compte">
-            <p class="message">Pas de compte ? <a href="index.php?action=register">Créer un compte</a></p>
+            <p class="message">Déja un compte ? <a href="index.php">Login</a></p>
             <p class="message">Mot de passe oublié ? <a href="index.php?action=lostpassword">Réinitialiser</a></p>
         </form>
     </div>
