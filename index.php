@@ -9,7 +9,14 @@ try {
             // utilisateur identifié acces a la la page description
         }
     }
- else {
+    
+    elseif (isset ($_GET['action'])) {
+        if ($_GET['action'] == 'register') {
+            createUser();
+        }
+}
+    
+    else {
     // affichege page login
     loginUser(); 
     }
