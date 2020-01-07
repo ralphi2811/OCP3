@@ -10,6 +10,6 @@ function createUser() {
     require 'view/frontend/createAccountView.php';
 }
 
-function lostpassword() {
+function lostPassword() {
     require 'view/frontend/resetPasswordView.php';
 }

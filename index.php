@@ -11,16 +11,13 @@ try {
     }
     
     elseif (isset ($_GET['action'])) {
-        if ($_GET['action'] == 'register') {
+        if ($_GET['action'] === 'register') {
             createUser();
         }
-}
-
-    elseif (isset ($_GET['action'])) {
-        if ($_GET['action'] == 'lostpassword') {
-            lostpassword();
+        elseif ($_GET['action'] === 'lostpassword') {
+            lostPassword();
         }
-}
+    }
     
     else {
     // affichege page login
