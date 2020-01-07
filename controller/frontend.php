@@ -9,3 +9,7 @@ function loginUser(){
 function createUser() {
     require 'view/frontend/createAccountView.php';
 }
+
+function lostpassword() {
+    require 'vie/frontend/lostpasswordView.php';
+}
