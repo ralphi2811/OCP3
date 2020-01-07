@@ -1,4 +1,4 @@
-<?php $title = 'Mot de passe perdu'; ?>
+<?php $title = 'Réinitialisation mot de passe'; ?>
 
 <?php ob_start(); ?>
 <div class="login-page">

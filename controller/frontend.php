@@ -11,5 +11,5 @@ function createUser() {
 }
 
 function lostpassword() {
-    require 'vie/frontend/lostpasswordView.php';
+    require 'view/frontend/resetPasswordView.php';
 }

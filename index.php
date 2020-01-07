@@ -15,6 +15,12 @@ try {
             createUser();
         }
 }
+
+    elseif (isset ($_GET['action'])) {
+        if ($_GET['action'] == 'lostpassword') {
+            lostpassword();
+        }
+}
     
     else {
     // affichege page login
