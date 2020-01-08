@@ -17,6 +17,9 @@ try {
         elseif ($_GET['action'] === 'lostpassword') {
             lostPassword();
         }
+        else {
+            throw new Exception('Action non autorisée');
+        }
     }
     
     else {
