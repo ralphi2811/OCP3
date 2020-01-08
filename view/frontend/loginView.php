@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <div class="login-page">
-    <img src="../../public/images/LOGO_GBAF.png" alt="Logo GBAF">
+    <img class="login_logo" src="../../public/images/LOGO_GBAF.png" alt="Logo GBAF">
     <div class="form">
         <form class="login-form">
             <input type="text" name="username" placeholder="Login"/>
