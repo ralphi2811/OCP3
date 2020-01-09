@@ -10,7 +10,8 @@
                 <option value="animal">Nom de votre animal</option>
                 <option value="mother">Nom de jeune fille de votre mère</option>
                 <option value="car">Votre première voiture</option>
-            </select>            
+            </select> 
+            <input type="text" name="answer" placeholder="Réponse"/>
             <input class="button" type="submit" value="RESET">
             <p class="message">Pas de compte ? <a href="index.php?action=register">Créer un compte</a></p>
             <p class="message">Déja un compte ? <a href="index.php">Login</a></p>
