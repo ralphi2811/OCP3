@@ -13,7 +13,7 @@
             </select>            
             <input class="button" type="submit" value="RESET">
             <p class="message">Pas de compte ? <a href="index.php?action=register">Créer un compte</a></p>
-            <p class="message">Déja un compte ? <a href="index.php">Se connecter</a></p>
+            <p class="message">Déja un compte ? <a href="index.php">Login</a></p>
         </form>
     </div>
 </div>
