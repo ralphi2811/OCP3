@@ -1,8 +1,8 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<footer>
+    <div class="footer-container">
+        <ol>
+            <li><a href="index.php?action=contact">Contact</a></li>
+            <li><a href="index.php?action=legal">Mentions légales</a></li>
+        </ol>
+    </div>
+</footer>
