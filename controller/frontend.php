@@ -29,3 +29,8 @@ function addUser($surname, $name, $username, $password, $question, $anwser) {
         throw new Exception('Compte créer');
     }
 }
+
+function logout() {
+    session_destroy();
+    require 'view/frontend/loginView.php';
+}
