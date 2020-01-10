@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 
-.login-page {
+.login-page,.errormessage {
   width: 360px;
   padding: 8% 0 0;
   margin: auto;
@@ -106,15 +106,6 @@ body {
   background: #F5B895;
   font-family: "Roboto", sans-serif;    
 }
-
-.errormessage {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
-  text-align: center;    
-}
-
-
 
 .login_logo {
     width: 50%;
