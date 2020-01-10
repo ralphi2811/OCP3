@@ -42,7 +42,8 @@ try {
     }
     
 } catch (Exception $ex) {
-    echo 'Erreur : ' . $ex->getMessage();
+    $errorMessage = $ex->getMessage();
+    require 'view/frontend/errorView.php';
 }
 
 
