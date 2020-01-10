@@ -103,6 +103,18 @@
   color: #EF3B3A;
 }
 body {
-  background: #F5B895; /* fallback for old browsers */
+  background: #F5B895;
   font-family: "Roboto", sans-serif;    
+}
+
+.errormessage {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+  text-align: center;    
+}
+
+.error_message {
+    background-color: #ffffff;
+    border-radius: 5px;
 }
