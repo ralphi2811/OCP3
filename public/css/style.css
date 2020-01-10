@@ -7,7 +7,7 @@
   margin: auto;
   text-align: center;
 }
-.form {
+.form,.error_message {
   position: relative;
   z-index: 1;
   background: #FFFFFF;
@@ -114,7 +114,8 @@ body {
   text-align: center;    
 }
 
-.error_message {
-    background-color: #ffffff;
-    border-radius: 5px;
+
+
+.login_logo {
+    width: 50%;
 }
