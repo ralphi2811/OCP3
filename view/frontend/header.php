@@ -1,8 +1,8 @@
-<?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+<header class="header">
+    <img class="login_logo" src="../../public/images/LOGO_GBAF.png" alt="Logo GBAF">
+    <div class="user">
+        <i class="fas fa-user"></i>
+        <a href="index.php?action=myaccount"><?= $_SESSION['surname'] ?> <?= $_SESSION['name'] ?></a>
+        <a href="index.php?action=logout">Se déconnecter</a>
+    </div>
+</header>
