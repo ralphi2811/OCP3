@@ -6,6 +6,7 @@
         <title><?= $title ?></title>
         <link rel="shortcut icon" href="../../public/images/favicon.ico">
         <link href="public/css/style.css" rel="stylesheet" /> 
+        <script src="https://kit.fontawesome.com/7f77d63822.js" crossorigin="anonymous"></script>
     </head>
         
     <body>
