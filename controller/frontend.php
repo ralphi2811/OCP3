@@ -34,3 +34,7 @@ function logout() {
     session_destroy();
     require 'view/frontend/loginView.php';
 }
+
+function userExist() {
+    
+}
