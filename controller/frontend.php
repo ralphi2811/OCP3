@@ -19,7 +19,7 @@ function lostPassword() {
 
 function addUser($surname, $name, $username, $password, $question, $anwser) {
     $userManager = new \Sixkreation\Ocp3\Model\UserManager();
-    $affectedLines = $userManager->userCreate($surname, $name, $username, hashPassword($password), $question, $anwser);
+    $affectedLines = $userManager->userCreate($surname, $name, secureString($username), hashPassword($password), $question, $anwser);
     
     if ($affectedLines === false) {
         throw new Exception('Creation Impossible');
