@@ -4,7 +4,7 @@
 <div class="login-page">
     <img class="login_logo" src="../../public/images/LOGO_GBAF.png" alt="Logo GBAF">
     <div class="form">
-        <form class="login-form">
+        <form class="login-form" action="index.php?action=login" method="post">
             <input type="text" name="username" placeholder="Login"/>
             <input type="password" name="password" placeholder="Mot de passe"/>
          <input class="button" type="submit" value="LOGIN">

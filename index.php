@@ -35,6 +35,17 @@ try {
         elseif ($_GET['action'] === 'logout' ) {
             logout();
         } 
+        elseif ($_GET['action'] === 'login' ) {
+            if (isset($_POST['username'])) {
+                if (!empty($_POST['username']) && !empty($_POST['password'])) {
+                    login($username, $password);
+                }
+                else {
+                    throw new Exception("Login impossible : des champs sont vides. " );
+                }
+                
+            }
+        }
         else {
             throw new Exception('Action non autorisée');
         }

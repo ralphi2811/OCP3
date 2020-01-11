@@ -58,7 +58,7 @@ function userExist($username) {
 
 function login($username, $password) {
     $userManager = new \Sixkreation\Ocp3\Model\UserManager();
-    $result = $userManager->userLogin($username, $password);
+    $result = $userManager->userLogin($username, hashPassword($password));
     
     if (intval($result['id_user'] > 0)) {
         // save all in $_SESSION
