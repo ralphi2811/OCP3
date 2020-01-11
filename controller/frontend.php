@@ -18,15 +18,22 @@ function lostPassword() {
 }
 
 function addUser($surname, $name, $username, $password, $question, $anwser) {
-    $userManager = new \Sixkreation\Ocp3\Model\UserManager();
-    $affectedLines = $userManager->userCreate($surname, $name, secureString($username), hashPassword($password), $question, $anwser);
     
-    if ($affectedLines === false) {
-        throw new Exception('Creation Impossible');
+    if (userExist($username) === false) {
+        
+        $userManager = new \Sixkreation\Ocp3\Model\UserManager();
+        $affectedLines = $userManager->userCreate(secureString($surname), secureString($name), secureString($username), hashPassword($password), $question, secureString($anwser));
+
+        if ($affectedLines === false) {
+            throw new Exception('Creation Impossible contactez l\'administrateur');
+        }
+        else {
+            // login
+            login($username, hashPassword($password));
+        }
     }
     else {
-        // ecriture de session id et redirection
-        throw new Exception('Compte créer');
+        throw new Exception('Utilisateur déja existant');
     }
 }
 
@@ -35,6 +42,34 @@ function logout() {
     require 'view/frontend/loginView.php';
 }
 
-function userExist() {
+function userExist($username) {
+    $userManager = new \Sixkreation\Ocp3\Model\UserManager();
+    $result = $userManager->userExist($username);
+    
+    $resultINT = intval($result['counter']);
+    
+    if ($resultINT > 0) {
+        return true;
+    }
+    else {
+        return false;
+    }   
+}
+
+function login($username, $password) {
+    $userManager = new \Sixkreation\Ocp3\Model\UserManager();
+    $result = $userManager->userLogin($username, $password);
+    
+    if (intval($result['id_user'] > 0)) {
+        // save all in $_SESSION
+        $_SESSION['userId'] = $result['id_user'];
+        $_SESSION['name'] = $result['nom'];
+        $_SESSION['surname'] = $result['prenom'];
+        // redirect
+        require 'view/frontend/acteurView.php';
+    }
+    else {
+        throw new Exception('Utilisateur ou mot de passe invalide');
+    }
     
 }

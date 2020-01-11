@@ -4,7 +4,12 @@
 <?= require_once 'view/frontend/header.php'; ?>
 
 <div class="gbaf-container">
+    
     <p>contenu de la page principale</p>
+    <p><?= $_SESSION['name']; ?></p>
+    <p><?= $_SESSION['surname']; ?></p>
+    <p><?= $_SESSION['userId']; ?></p>
+    
 </div>
 
 <?= require_once 'view/frontend/footer.php'; ?>

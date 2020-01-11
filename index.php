@@ -5,8 +5,8 @@ require 'controller/frontend.php';
 
 try {
     if (isset($_SESSION['userId'])) {
-        if ($_SESSION['userId'] > 0) {
-            // utilisateur identifié acces a la la page description
+        if (intval($_SESSION['userId']) > 0) {
+            require 'view/frontend/acteurView.php';
         }
     }
     

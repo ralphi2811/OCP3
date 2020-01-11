@@ -5,7 +5,7 @@
         <img class="login_logo" src="../../public/images/LOGO_GBAF.png" alt="Logo GBAF">
         <div class="error_message">
             <p><?= $errorMessage ?></p> 
-            <a href="index.php">Retour à l'accueil</a>
+            <a href="javascript:history.go(-1)">Retour</a>
         </div>    
     </div>
 
