@@ -4,13 +4,8 @@ session_start();
 require 'controller/frontend.php';
 
 try {
-    if (isset($_SESSION['userId'])) {
-        if (intval($_SESSION['userId']) > 0) {
-            require 'view/frontend/acteurView.php';
-        }
-    }
-    
-    elseif (isset ($_GET['action'])) {
+        
+    if (isset ($_GET['action'])) {
         if ($_GET['action'] === 'register') {
             if(isset($_POST['surname'])) {
                 if (!empty($_POST['surname']) && !empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['question']) && !empty($_POST['answer']) ) {
@@ -36,9 +31,9 @@ try {
             logout();
         } 
         elseif ($_GET['action'] === 'login' ) {
-            if (isset($_POST['username'])) {
+            if (isset($_POST['username']) && isset($_POST['password'])) {
                 if (!empty($_POST['username']) && !empty($_POST['password'])) {
-                    login($username, $password);
+                    login($_POST['username'], $_POST['password']);
                 }
                 else {
                     throw new Exception("Login impossible : des champs sont vides. " );
@@ -46,6 +41,19 @@ try {
                 
             }
         }
+        
+        elseif ($_GET['action'] === 'actors') {
+            if (isset($_SESSION['userId']) && $_SESSION['userId'] != 0 ) {
+                // redirection vers page accueil acteurs
+                require 'view/frontend/acteurView.php';
+            }
+            
+            else {
+                throw new Exception('Vous devez vous connecter pour visualiser cette page');
+            }
+            
+        }
+        
         else {
             throw new Exception('Action non autorisée');
         }

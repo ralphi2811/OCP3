@@ -29,7 +29,7 @@ function addUser($surname, $name, $username, $password, $question, $anwser) {
         }
         else {
             // login
-            login($username, hashPassword($password));
+            login($username, $password);
         }
     }
     else {
@@ -38,8 +38,9 @@ function addUser($surname, $name, $username, $password, $question, $anwser) {
 }
 
 function logout() {
-    session_destroy();
-    require 'view/frontend/loginView.php';
+    
+    $_SESSION = array();
+    header('Location: index.php');
 }
 
 function userExist($username) {
@@ -66,10 +67,10 @@ function login($username, $password) {
         $_SESSION['name'] = $result['nom'];
         $_SESSION['surname'] = $result['prenom'];
         // redirect
-        require 'view/frontend/acteurView.php';
+        header('Location: index.php?action=actors');
     }
     else {
-        throw new Exception('Utilisateur ou mot de passe invalide');
+        throw new Exception('Utilisateur ou mot de passe invalide');       
     }
     
 }

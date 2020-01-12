@@ -110,3 +110,14 @@ body {
 .login_logo {
     width: 50%;
 }
+
+footer {
+    text-align: center;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    background-color: #ffffff;
+    
+}
