@@ -1,7 +1,7 @@
 <?php $title = 'GBAF - Acceuil'; ?>
 
 <?php ob_start(); ?>
-<?= require_once 'view/frontend/header.php'; ?>
+<?php include("header.php"); ?>
 
 <div class="gbaf-container">
     
@@ -12,7 +12,7 @@
     
 </div>
 
-<?= require_once 'view/frontend/footer.php'; ?>
+<?php include("footer.php"); ?>
 <?php $content = ob_get_clean(); ?>
 
 <?php require 'template.php'; ?>
