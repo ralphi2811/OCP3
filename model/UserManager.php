@@ -28,6 +28,29 @@ class UserManager extends Manager
         $userArray = $req->fetch();
         return $userArray;
     }
+    
+    public function userLostPassword($username, $question, $answer) {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT `id_user` FROM `account` WHERE username=? && question=? && reponse=?');
+        $req->execute(array($username, $question, $answer));
+        $userArray = $req->fetch();
+        return $userArray;
+    }
+    
+    public function userUpdatePassword($username, $password) {
+        $db = $this->dbConnect();
+        $modPwd = $db->prepare('UPDATE `account` SET `password`=? WHERE username=?');
+        $affectedlines = $modPwd->execute(array($password,$username));
+        return $affectedlines;
+    }
+    
+    public function userUpdateData($username, $surname, $name, $password, $question, $anwser) {
+        // FINIR ICI
+    }
+    
+    public function userData($id_user) {
+        // FINIR ICI
+    }
         
 }
 
