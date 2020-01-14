@@ -38,7 +38,7 @@ function addUser($surname, $name, $username, $password, $question, $anwser) {
 }
 
 function logout() {
-    
+    // VOIR unset()
     $_SESSION = array();
     header('Location: index.php');
 }
