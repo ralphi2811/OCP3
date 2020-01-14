@@ -3,7 +3,7 @@
 <?php ob_start(); ?>
 <div class="login-page">
     <div class="form">
-        <form class="login-form">
+        <form class="login-form" action="index.php?action=lostpassword">
             <input type="text" name="username" placeholder="Login"/>
             <select name="question">
                 <option value="">-- Question Secrète --</option>

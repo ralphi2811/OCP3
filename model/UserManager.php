@@ -44,11 +44,14 @@ class UserManager extends Manager
         return $affectedlines;
     }
     
-    public function userUpdateData($username, $surname, $name, $password, $question, $anwser) {
-        // FINIR ICI
+    public function userUpdateData($userId, $username, $surname, $name, $password, $question, $anwser) {
+        $db = $this->dbConnect();
+        $modPwd = $db->prepare('UPDATE `account` SET `password`=? WHERE username=?');
+        $affectedlines = $modPwd->execute(array($password,$username));
+        return $affectedlines;
     }
     
-    public function userData($id_user) {
+    public function userViewData($id_user) {
         // FINIR ICI
     }
         
