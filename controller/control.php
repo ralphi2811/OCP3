@@ -13,3 +13,10 @@ function secureString($string) {
     return $secured_string;
 }
 
+function snackbarError() {
+    if (isset($_SESSION['errorMessage'])) {
+        
+    }
+}
+
+

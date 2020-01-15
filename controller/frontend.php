@@ -70,7 +70,11 @@ function login($username, $password) {
         header('Location: index.php?action=actors');
     }
     else {
-        throw new Exception('Utilisateur ou mot de passe invalide');       
+        //throw new Exception('Utilisateur ou mot de passe invalide');  
+        $_SESSION['errorMessage'] = "Login ou Mot de passe incorrect";
+        header('Location: index.php');
+        
+        //FINIR ICI
     }
     
 }
