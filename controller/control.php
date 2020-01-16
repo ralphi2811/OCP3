@@ -13,7 +13,7 @@ function secureString($string) {
     return $secured_string;
 }
 
-function checkUserInput($string) {
+function secureUserInput($string) {
     // check length of string
     $lenString = strlen($string);
     if ($lenString < 4  OR $lenString > 15) {
