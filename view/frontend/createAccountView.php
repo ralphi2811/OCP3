@@ -4,10 +4,10 @@
 <div class="login-page">
     <div class="form">
         <form action="index.php?action=register" method="post" class="login-form">
-            <input type="text" name="surname" placeholder="Nom" required/>
-            <input type="text" name="name" placeholder="Prénom" required/>
-            <input type="text" name="username" placeholder="Login" required/>
-            <input type="password" name="password" placeholder="Mot de passe" required/>
+            <input type="text" name="surname" placeholder="Nom" required maxlength="15" minlength="4"/>
+            <input type="text" name="name" placeholder="Prénom" required maxlength="15" minlength="4"/>
+            <input type="text" name="username" placeholder="Login" required maxlength="15" minlength="4"/>
+            <input type="password" name="password" placeholder="Mot de passe" required minlength="6"/>
             <input type="password" name="password_check" placeholder="Vérifier mot de passe" required onblur="checkpassword()"/>
             <select name="question" required>
                 <option value="">-- Question Secrète --</option>
