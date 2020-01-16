@@ -13,10 +13,23 @@ function secureString($string) {
     return $secured_string;
 }
 
-function cleanLogin($string) {
-    // prevent xss injection
-    $clean = secureString($string);
-    
-    // remove spaces at start & end of string
-    
+function checkUserInput($string) {
+    // check length of string
+    $lenString = strlen($string);
+    if ($lenString < 4  OR $lenString > 15) {
+        
+        throw new Exception("Taille du champ Login, Nom ou Prénom non conforme, création de l'utilisateur impossible");
+    }
+    // check if string use illegal characters
+    elseif (preg_match("#[ \t\n\x0B\f\r\<\>\\\/]#", $string)) {
+        throw new Exception("Utilisation de caractères illégaux. Création de l'utilisateur impossible.");
+    }
+    // return secure string
+    else {
+        return secureString($string);
+    }
 }
+
+
+    
+    
