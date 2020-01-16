@@ -90,7 +90,7 @@ function checkAnswer($username, $question, $answer) {
     
     if (intval($result['id_user'] > 0)) {
         $_SESSION['tempId'] = $result['id_user'];
-        // view newPasswordView CREER LA VUE CHANGEPASSWORD
+        require 'view/frontend/newPasswordView.php';
     }
     
     else {

@@ -28,6 +28,11 @@ try {
                 // function checkAnswer & redirect to changePassword
                 checkAnswer($_POST['username'],$_POST['question'],$_POST['answer']);
             }
+            
+            elseif (isset ($_POST['password'])) {
+                // FINIR ICI recupérer post et renvoyer a la fonction newPassword(a faire)
+            }
+            
             else {
                 // view lost password form
                 lostPassword();

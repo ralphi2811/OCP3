@@ -4,6 +4,7 @@
 <div class="login-page">
     <div class="form">
         <form class="login-form" action="index.php?action=lostpassword" method="post">
+            <p>Mot de passe perdu ?</p>
             <input type="text" name="username" placeholder="Login" required minlength="4" maxlength="15"/>
             <select name="question" required>
                 <option value="">-- Question Secrète --</option>
