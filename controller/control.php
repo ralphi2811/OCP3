@@ -13,10 +13,10 @@ function secureString($string) {
     return $secured_string;
 }
 
-function snackbarError() {
-    if (isset($_SESSION['errorMessage'])) {
-        
-    }
+function cleanLogin($string) {
+    // prevent xss injection
+    $clean = secureString($string);
+    
+    // remove spaces at start & end of string
+    
 }
-
-
