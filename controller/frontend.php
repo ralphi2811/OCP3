@@ -70,11 +70,13 @@ function login($username, $password) {
         header('Location: index.php?action=actors');
     }
     else {
-        //throw new Exception('Utilisateur ou mot de passe invalide');  
-        $_SESSION['errorMessage'] = "Login ou Mot de passe incorrect";
-        header('Location: index.php');
+        /* Old method (redirect to error page)
+        throw new Exception('Utilisateur ou mot de passe invalide'); 
+         */
         
-        //FINIR ICI
+        // New code Snackbar Message (on all pages)
+        $_SESSION['message'] = "Login ou Mot de passe incorrect";
+        header('Location: index.php');
     }
     
 }
