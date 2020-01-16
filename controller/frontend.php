@@ -74,7 +74,7 @@ function login($username, $password) {
         throw new Exception('Utilisateur ou mot de passe invalide'); 
          */
         
-        // New code Snackbar Message (on all pages)
+        // New method : Snackbar / Toast Message (on all pages)
         $_SESSION['message'] = "Login ou Mot de passe incorrect";
         header('Location: index.php');
     }
