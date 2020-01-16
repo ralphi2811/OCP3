@@ -8,7 +8,7 @@
             <input type="text" name="name" placeholder="Prénom" required/>
             <input type="text" name="username" placeholder="Login" required/>
             <input type="password" name="password" placeholder="Mot de passe" required/>
-            <input type="password" name="password_check" placeholder="Vérifier mot de passe" required/>
+            <input type="password" name="password_check" placeholder="Vérifier mot de passe" required onblur="checkpassword()"/>
             <select name="question" required>
                 <option value="">-- Question Secrète --</option>
                 <option value="animal">Nom de votre animal</option>
@@ -22,6 +22,7 @@
         </form>
     </div>
 </div>
+<script src="../../public/js/verifyPassword.js"></script>
 
 <?php $content = ob_get_clean(); ?>
 
