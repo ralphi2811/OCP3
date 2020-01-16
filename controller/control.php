@@ -24,7 +24,7 @@ function checkUserInput($string) {
     elseif (preg_match("#[ \t\n\x0B\f\r\<\>\\\/]#", $string)) {
         throw new Exception("Utilisation de caractères illégaux. Création de l'utilisateur impossible.");
     }
-    // return secure string
+    // if all is good return secure string
     else {
         return secureString($string);
     }
