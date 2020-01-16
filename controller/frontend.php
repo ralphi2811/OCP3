@@ -22,7 +22,7 @@ function addUser($surname, $name, $username, $password, $question, $anwser) {
     if (userExist($username) === false) {
         
         $userManager = new \Sixkreation\Ocp3\Model\UserManager();
-        $affectedLines = $userManager->userCreate(secureString($surname), secureString($name), secureString($username), hashPassword($password), $question, secureString($anwser));
+        $affectedLines = $userManager->userCreate(secureUserInput($surname), secureUserInput($name), secureUserInput($username), hashPassword($password), $question, secureString($anwser));
 
         if ($affectedLines === false) {
             throw new Exception('Creation Impossible contactez l\'administrateur');
