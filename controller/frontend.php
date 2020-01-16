@@ -66,6 +66,9 @@ function login($username, $password) {
         $_SESSION['userId'] = $result['id_user'];
         $_SESSION['name'] = $result['nom'];
         $_SESSION['surname'] = $result['prenom'];
+        
+        // Welcome message
+        $_SESSION['message'] = 'Bienvenue ' . $result['prenom'];
         // redirect
         header('Location: index.php?action=actors');
     }
