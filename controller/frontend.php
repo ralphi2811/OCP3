@@ -83,3 +83,18 @@ function login($username, $password) {
     }
     
 }
+
+function checkAnswer($username, $question, $answer) {
+    $userManager = new \Sixkreation\Ocp3\Model\UserManager();
+    $result = $userManager->userLostPassword(secureUserInput($username), $question, secureString($answer));
+    
+    if (intval($result['id_user'] > 0)) {
+        $_SESSION['tempId'] = $result['id_user'];
+        // view newPasswordView CREER LA VUE CHANGEPASSWORD
+    }
+    
+    else {
+        $_SESSION['message'] = "Question ou réponsse incorrecte";
+        header('Location: index.php?action=lostpassword');
+    }
+}

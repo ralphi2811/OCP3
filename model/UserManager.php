@@ -37,10 +37,10 @@ class UserManager extends Manager
         return $userArray;
     }
     
-    public function userUpdatePassword($username, $password) {
+    public function userUpdatePassword($userId, $password) {
         $db = $this->dbConnect();
-        $modPwd = $db->prepare('UPDATE `account` SET `password`=? WHERE username=?');
-        $affectedlines = $modPwd->execute(array($password,$username));
+        $modPwd = $db->prepare('UPDATE `account` SET `password`=? WHERE id_user=?');
+        $affectedlines = $modPwd->execute(array($password,$userId));
         return $affectedlines;
     }
     

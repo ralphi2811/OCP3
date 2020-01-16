@@ -24,7 +24,14 @@ try {
             
         }
         elseif ($_GET['action'] === 'lostpassword') {
-            lostPassword();
+            if (isset($_POST['username']) && isset($_POST['question']) && isset($_POST['answer'])) {
+                // function checkAnswer & redirect to changePassword
+                checkAnswer($_POST['username'],$_POST['question'],$_POST['answer']);
+            }
+            else {
+                // view lost password form
+                lostPassword();
+            }
         }
         
         elseif ($_GET['action'] === 'logout' ) {
