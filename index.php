@@ -30,7 +30,10 @@ try {
             }
             
             elseif (isset ($_POST['password'])) {
-                // FINIR ICI recupérer post et renvoyer a la fonction newPassword(a faire)
+                if (!empty($_POST['password']) && !empty($_SESSION['tempId'])) {
+                    //call function updatePassword
+                    updatePassword($_SESSION['tempId'], $_POST['password']);
+                }
             }
             
             else {

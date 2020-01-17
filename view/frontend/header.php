@@ -1,6 +1,6 @@
 <header>
     <div class='header'>
-        <img class="logo" src="../../public/images/LOGO_GBAF.png" alt="Logo GBAF">
+        <a href="index.php?action=actors"><img class="logo" src="../../public/images/LOGO_GBAF.png" alt="Logo GBAF"></a>
         <div class="header-right">
             <i class="far fa-user-circle"></i>
             <a href="index.php?action=myaccount"><i class="fas fa-pen"></i> <?= $_SESSION['surname'] ?> <?= $_SESSION['name'] ?></a>

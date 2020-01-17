@@ -1,7 +1,6 @@
 <?php
 
-function hashPassword($password)
-{
+function hashPassword($password) {
     $salage = 'oCpFstackP3';
     $salted_password = "$password$salage";
     return hash('sha256', $salted_password);
@@ -30,6 +29,11 @@ function secureUserInput($string) {
     }
 }
 
-
-    
-    
+function passwordLength($password) {
+    if (strlen($password) >= 6) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}

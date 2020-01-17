@@ -33,7 +33,12 @@ function addUser($surname, $name, $username, $password, $question, $anwser) {
         }
     }
     else {
-        throw new Exception('Utilisateur déja existant');
+        // old version 
+        // throw new Exception('Utilisateur déja existant');
+        
+        // new version
+        $_SESSION['message'] = "Utilisateur dejà existant";
+        require 'view/frontend/createAccountView.php';
     }
 }
 
@@ -97,4 +102,24 @@ function checkAnswer($username, $question, $answer) {
         $_SESSION['message'] = "Question ou réponsse incorrecte";
         header('Location: index.php?action=lostpassword');
     }
+}
+
+function updatePassword($userId, $password) {
+    if (passwordLength($password) === false) {
+        throw new Exception('Longueur du mot de passe invalide');
+    }
+    else {
+        $userManager = new \Sixkreation\Ocp3\Model\UserManager();
+        $affectedLines = $userManager->userUpdatePassword($userId, hashPassword($password));
+    
+        if ($affectedLines === false) {
+        throw new Exception('Modification Impossible contactez l\'administrateur');
+        }
+        else {
+        $_SESSION['message'] = "Mot de passe changé";
+        header('Location: index.php');               
+        }
+    }
+
+    
 }
