@@ -9,7 +9,14 @@ try {
         if ($_GET['action'] === 'register') {
             if(isset($_POST['surname'])) {
                 if (!empty($_POST['surname']) && !empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['question']) && !empty($_POST['answer']) ) {
-                    addUser($_POST['surname'], $_POST['name'], $_POST['username'], $_POST['password'], $_POST['question'], $_POST['answer']);
+                    if (passwordLength($_POST['password']) === false) {
+                       throw new Exception("Longueur mot de passe invalide" );
+                    }
+                    else {
+                       addUser($_POST['surname'], $_POST['name'], $_POST['username'], $_POST['password'], $_POST['question'], $_POST['answer']); 
+                        
+                    }
+                    
                 }
                 
                 else {
@@ -32,7 +39,13 @@ try {
             elseif (isset ($_POST['password'])) {
                 if (!empty($_POST['password']) && !empty($_SESSION['tempId'])) {
                     //call function updatePassword
-                    updatePassword($_SESSION['tempId'], $_POST['password']);
+                    if (passwordLength($_POST['password']) === false) {
+                        throw new Exception("Longueur mot de passe invalide" );
+                    }
+                    else {
+                        updatePassword($_SESSION['tempId'], $_POST['password']);
+                    }
+                    
                 }
             }
             
