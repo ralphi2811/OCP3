@@ -18,7 +18,7 @@
                 while ($data = $actors->fetch()) {
             ?>
             <div class="actor-light">
-                <img src="public/images/<?= $data['logo'] ?>">
+                <img src="public/images/<?= $data['logo'] ?>" alt="<?= $data['acteur'] ?>_logo">
                 <h3>
                    <?= $data['acteur'] ?>
                 </h3>
