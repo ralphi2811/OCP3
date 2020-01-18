@@ -72,8 +72,9 @@ try {
         
         elseif ($_GET['action'] === 'actors') {
             if (isset($_SESSION['userId']) && $_SESSION['userId'] != 0 ) {
-                // redirection vers page accueil acteurs
-                require 'view/frontend/actorsView.php';
+                // redirection vers page accueil acteurs OLD VERSION
+                //require 'view/frontend/actorsView.php';
+                listActors();
             }
             
             else {

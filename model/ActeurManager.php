@@ -7,6 +7,8 @@ require_once 'model/Manager.php';
 class ActeurManager extends Manager {
     public function getActors() {
         $db = $this->dbConnect();
-        $req = $db->query($statement); ///////////////////////////////// FINIR ICI
+        $req = $db->query('SELECT * FROM `acteur`'); 
+        
+        return $req;
     }
 }

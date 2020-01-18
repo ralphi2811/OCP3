@@ -123,3 +123,11 @@ function updatePassword($userId, $password) {
 
     
 }
+
+function listActors() {
+    $actorManager = new \Sixkreation\Ocp3\Model\ActeurManager();
+    $actors = $actorManager->getActors();
+    
+    require 'view/frontend/actorsView.php';
+    
+}
