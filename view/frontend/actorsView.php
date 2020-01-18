@@ -23,7 +23,7 @@
                    <?= $data['acteur'] ?>
                 </h3>
                 <p class="description">
-                    <?= $data['description'] ?>
+                    <?= nl2br($data['description']) ?>
                     <a href="index.php?action=actor&amp;id=<?= $data['id_acteur'] ?>"> Lire la suite</a>
                 </p>
             </div>
