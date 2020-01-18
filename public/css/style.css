@@ -168,21 +168,49 @@ body {
 }
 
 .gbaf-container {
-    /*min-height: 100vh;*/
+    
     width: 75%;
     padding: 0px 0px;
     margin: auto;
 }
 
+.gbaf-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.presentation-container {
+    
+    margin: 10px;
+}
+
+.actors-container {
+    margin: 10px;
+}
+
+.bandeau {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 0px 0px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px 5px 5px 60px;
+}
+
 /*******************************************************************************FOOTER*******************************************************************************/
 .footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: #F2D6AE;
-   color: white;
-   text-align: center;  
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 0px 0px;
+    width: 75%;
+    margin: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px 5px 5px 60px;
 }
 ul.inline {
     list-style-type: none;
