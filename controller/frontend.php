@@ -131,3 +131,8 @@ function listActors() {
     require 'view/frontend/actorsView.php';
     
 }
+
+function actor($id_acteur) {
+    $actorManager = new \Sixkreation\Ocp3\Model\ActeurManager();
+    /// FINIR ICI
+}
