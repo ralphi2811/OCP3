@@ -14,7 +14,7 @@ class ActeurManager extends Manager {
     
     public function getActor($id_acteur) {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT * FROM `acteur` WHERE `id_acteur` =?');
+        $req = $db->prepare('SELECT * FROM `acteur` WHERE `id_acteur` =?');
         $req->execute(array($id_acteur));
         $actor = $req->fetch();
         

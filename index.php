@@ -83,6 +83,10 @@ try {
             
         }
         
+        elseif ($_GET['action'] === 'actor' && isset ($_GET['id'])) {
+            actor($_GET['id']);
+        }
+        
         else {
             throw new Exception('Action non autorisée');
         }
