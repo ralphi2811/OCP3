@@ -19,13 +19,11 @@
             ?>
             <div class="actor-light">
                 <img src="public/images/<?= $data['logo'] ?>" alt="<?= $data['acteur'] ?> logo">
-                <h3>
-                   <?= $data['acteur'] ?>
-                </h3>
                 <p class="description">
+                    <h3><?= $data['acteur'] ?></h3><br>
                     <?= nl2br($data['description']) ?> ...
                 </p>
-                <a href="index.php?action=actor&amp;id=<?= $data['id_acteur'] ?>"> Lire la suite</a>
+                <a class="bouton-next" href="index.php?action=actor&amp;id=<?= $data['id_acteur'] ?>"> Lire la suite</a>
             </div>
             <?php 
             } 
