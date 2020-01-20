@@ -246,6 +246,35 @@ body {
   color: white;
 }
 
+.actor-container {
+    margin: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px 5px 5px 5px;
+}
+
+.container-logo {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    padding-top: 10px;    
+}
+
+.container-logo img {
+    overflow: hidden;
+    background-color: #f1f1f1;
+    padding: 0px 0px;
+    width: 50%;
+    margin: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px 5px 5px 60px;
+}
+
+.description {
+    margin: 10px 5px 5px 10px
+    
+}
+
+
 
 
 /*******************************************************************************FOOTER*******************************************************************************/
@@ -365,6 +394,10 @@ ul a {
     .actor-light img {
         width: 98%;
         margin-right: 10px;
+    }
+    
+    .container-logo img {
+        width: 100%;
     }
     
 

@@ -5,7 +5,20 @@
 <?php include("header.php"); ?>
 
 <div class="gbaf-container">
-    <img src="/public/images/<?= $actor['logo'] ?>"
+    <div class="actor-container">
+        <div class="container-logo">
+            <img class="presentation-logo "src="/public/images/<?= $actor['logo'] ?>" alt="logo <?= $actor['acteur'] ?>">
+        </div>
+        <div class="description">
+            <h2><strong><?= $actor['acteur'] ?></strong></h2>
+            <a href="#">Lien vers <?= $actor['acteur'] ?></a>
+            <p class="description-longue">
+                <?= nl2br($actor['description']) ?>
+            </p>
+        </div>
+             
+    </div>
+    
 </div>
 
 <?php include("footer.php"); ?>
