@@ -93,8 +93,14 @@ try {
     }
     
     else {
-    // affichege page login
-    loginUser(); 
+        if (isset($_SESSION['userId']) && $_SESSION['userId'] > 0) {
+            header('Location: index.php?action=actors');
+        }
+        else {
+            // affichege page login
+            loginUser(); 
+        }
+    
     }
     
 } catch (Exception $ex) {
