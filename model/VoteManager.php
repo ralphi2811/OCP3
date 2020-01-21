@@ -40,4 +40,22 @@ class VoteManager extends Manager {
         
         return $affectedLines;
     }
+    
+    public function countVotePositif($actorId) {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT COUNT(*) AS v_like FROM `vote` WHERE id_acteur =? && vote=1');
+        $req->execute(array($actorId));
+        $likes = $req->fetch();
+        
+        return $likes;
+    }
+    
+        public function countVoteNegatif($actorId) {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT COUNT(*) AS v_dislike FROM `vote` WHERE id_acteur =? && vote=0');
+        $req->execute(array($actorId));
+        $dislikes = $req->fetch();
+        
+        return $dislikes;
+    }
 }

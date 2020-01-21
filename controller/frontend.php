@@ -141,7 +141,8 @@ function actor($id_acteur) {
     
     $actor = $actorManager->getActor($id_acteur);
     $comments = $commentManager->getComments($id_acteur);
-    $votes = $voteManager->countVotes($id_acteur);
+    $likes = $voteManager->countVotePositif($id_acteur);
+    $disLikes = $voteManager->countVoteNegatif($id_acteur);
     
     if ($actor['id_acteur'] < 1) {
         throw new Exception('Aucun acteur avec cet id');

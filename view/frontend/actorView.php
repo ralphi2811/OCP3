@@ -20,8 +20,8 @@
             <p>Commentaires <i class="fas fa-comments"></i></p>
             <div class="vote">                
                 <div class="vote-button">
-                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;action=like"><i class="fas fa-thumbs-up"></i><?= $votes['positif'] ?></a>
-                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;action=dislike"><i class="fas fa-thumbs-down"></i><?= $votes['negatif'] ?></a>
+                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;action=like"><i class="fas fa-thumbs-up"></i><?= $likes['v_like'] ?></a>
+                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;action=dislike"><i class="fas fa-thumbs-down"></i><?= $disLikes['v_dislike'] ?></a>
                 </div>
                 <button class="button">Nouveau commentaire</button>
             </div>
@@ -36,10 +36,9 @@
                     while ($dataCom = $comments->fetch()) {
                 ?>
                 <div class="commentaire-light">
-                    <p><?= $dataCom['prenom'] ?></p>
+                    <p><i class="far fa-user"></i>  <?= $dataCom['prenom'] ?></p>
                     <p><?= $dataCom['date_comment'] ?></p>
                     <p><?= $dataCom['post'] ?></p>
-                    
                 </div>
                 <?php 
                 } 
@@ -47,7 +46,6 @@
                 ?>
             </div>
         </div>
-             
     </div>
     
 </div>
