@@ -98,7 +98,7 @@ i.far.fa-user-circle {
   font-size: 14px;
 }
 
-.form .button {
+.form .button, {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -277,7 +277,7 @@ body {
 
 .vote-thumb {
   
-  color: blue;
+  color: #658DC6;
   text-align: center;
   padding: 12px;
   text-decoration: none;
