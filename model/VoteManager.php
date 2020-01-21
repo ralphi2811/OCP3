@@ -25,22 +25,6 @@ class VoteManager extends Manager {
         
     }
     
-    public function postVote($id_actor, $id_user, $vote) {
-        $db = $this->dbConnect();
-        $vote = $db->prepare('INSERT INTO `vote`(`id_user`, `id_acteur`, `vote`) VALUES (?,?,?)');
-        $affectedLines = $vote->execute(array($id_user,$id_actor,$vote));
-        
-        return $affectedLines;
-    }
-    
-    public function updateVote($id_actor, $id_user, $vote) {
-        $db = $this->dbConnect();
-        $vote = $db->prepare('UPDATE `vote` SET `vote`=? WHERE id_user=? && id_acteur=?');
-        $affectedLines = $vote->execute(array($vote,$id_user,$id_actor));
-        
-        return $affectedLines;
-    }
-    
     public function countVotePositif($actorId) {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT COUNT(*) AS v_like FROM `vote` WHERE id_acteur =? && vote=1');
@@ -57,5 +41,19 @@ class VoteManager extends Manager {
         $dislikes = $req->fetch();
         
         return $dislikes;
+    }
+    
+    public function postVote2($actor,$user,$vote) {
+        $db = $this->dbConnect();  
+        $newVote = $db->prepare('INSERT INTO `vote`(`id_user`, `id_acteur`, `vote`) VALUES (?,?,?)');
+        $affectedlines = $newVote->execute(array($user,$actor,$vote));
+        return $affectedlines;
+    }
+    
+    public function updateVote2($actor,$user,$vote) {
+        $db = $this->dbConnect();  
+        $newVote = $db->prepare('UPDATE `vote` SET `vote`=? WHERE id_user=? && id_acteur=?');
+        $affectedlines = $newVote->execute(array($vote,$user,$actor));
+        return $affectedlines;
     }
 }

@@ -87,6 +87,17 @@ try {
             if (isset($_GET['comment']) && $_GET['comment'] === 'new') {
                 addComment($_SESSION['userId'], $_GET['id'], $_POST['commentaire']);
             }
+            
+            elseif(isset ($_GET['vote']) && $_GET['vote'] === 'like') {
+                // like actor
+                addVote($_GET['id'], $_SESSION['userId'], '1');
+            }
+            
+            elseif (isset ($_GET['vote']) && $_GET['vote'] === 'dislike') {
+                // dislike actor
+                addVote($_GET['id'], $_SESSION['userId'], '0');
+            }
+            
             else {
                 actor($_GET['id']);
             }

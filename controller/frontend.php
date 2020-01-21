@@ -174,9 +174,10 @@ function addVote($id_actor, $id_user, $vote) {
     
     // check if vote exist
     $voteExist = $voteManager->existVote($id_actor, $id_user);
-    if ($voteExist['exist'] > 0) {
+    if ($voteExist['exist'] !== '0') {
+        
         // Vote already exist -> Update
-        $affectedLines = $voteManager->updateVote($id_actor, $id_user, $vote);
+        $affectedLines = $voteManager->updateVote2($id_actor, $id_user, $vote);
         
         if ($affectedLines === false) {
             throw new Exception('Impossible de modifier le vote contactez l\'administrateur');
@@ -187,8 +188,9 @@ function addVote($id_actor, $id_user, $vote) {
         }
     }
     else {
+        
         // Add new vote
-        $affectedLines = $voteManager->postVote($id_actor, $id_user, $vote);
+        $affectedLines = $voteManager->postVote2($id_actor, $id_user, $vote);
         
         if ($affectedLines === false) {
             throw new Exception('Impossible de voter, contactez l\'administrateur');
