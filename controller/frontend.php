@@ -140,13 +140,13 @@ function actor($id_acteur) {
     $voteManager = new \Sixkreation\Ocp3\Model\VoteManager();
     
     $actor = $actorManager->getActor($id_acteur);
+    $comments = $commentManager->getComments($id_acteur);
+    $votes = $voteManager->countVotes($id_acteur);
+    
     if ($actor['id_acteur'] < 1) {
         throw new Exception('Aucun acteur avec cet id');
     }
     else {
-        $comments = $commentManager->listComments($id_acteur);
-        $votes = $voteManager->countVotes($id_acteur);
-        
         require 'view/frontend/actorView.php'; // page acteur
     }
     

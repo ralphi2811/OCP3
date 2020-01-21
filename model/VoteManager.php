@@ -11,7 +11,7 @@ class VoteManager extends Manager {
         $req = $db->prepare("set @actor_id = ?; SELECT (SELECT COUNT(*) FROM vote WHERE vote='1' && id_acteur=@actor_id) AS positif, (SELECT COUNT(*) FROM vote WHERE vote='-1' && id_acteur=@actor_id) AS negatif");
         $req->execute(array($id_actor));
         $votes = $req->fetch();
-        
+                
         return $votes;
     }
     

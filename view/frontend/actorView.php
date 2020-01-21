@@ -16,6 +16,37 @@
                 <?= nl2br($actor['description']) ?>
             </p>
         </div>
+        <div class="container-commentaires">
+            <p>Commentaires <i class="fas fa-comments"></i></p>
+            <div class="vote">                
+                <div class="vote-button">
+                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;action=like"><i class="fas fa-thumbs-up"></i><?= $votes['positif'] ?></a>
+                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;action=dislike"><i class="fas fa-thumbs-down"></i><?= $votes['negatif'] ?></a>
+                </div>
+                <button class="button">Nouveau commentaire</button>
+            </div>
+            <div class="nouveau-commentaire">
+                <form class="form-commentaire">
+                    <input type="textarea" name="commentaire" placeholder="Saisissez votre commentaire" required="">
+                    <input type="submit" class="button" value="VALIDER">
+                </form>
+            </div>
+            <div class="commentaires">
+                <?php
+                    while ($dataCom = $comments->fetch()) {
+                ?>
+                <div class="commentaire-light">
+                    <p><?= $dataCom['prenom'] ?></p>
+                    <p><?= $dataCom['date_comment'] ?></p>
+                    <p><?= $dataCom['post'] ?></p>
+                    
+                </div>
+                <?php 
+                } 
+                $comments->closeCursor();
+                ?>
+            </div>
+        </div>
              
     </div>
     
