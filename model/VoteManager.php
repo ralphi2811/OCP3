@@ -17,7 +17,7 @@ class VoteManager extends Manager {
     
     public function existVote($id_actor, $id_user) {
         $db = $this->dbConnect();
-        $req = $db->prepare('SELECT COUNT(*) FROM `vote` WHERE vote.id_acteur=? && vote.id_user=?');
+        $req = $db->prepare('SELECT COUNT(*) AS exist FROM `vote` WHERE vote.id_acteur=? && vote.id_user=?');
         $req->execute(array($id_actor,$id_user));
         $exist = $req->fetch();
         

@@ -84,7 +84,13 @@ try {
         }
         
         elseif ($_GET['action'] === 'actor' && isset ($_GET['id'])) {
-            actor($_GET['id']);
+            if (isset($_GET['comment']) && $_GET['comment'] === 'new') {
+                addComment($_SESSION['userId'], $_GET['id'], $_POST['commentaire']);
+            }
+            else {
+                actor($_GET['id']);
+            }
+             
         }
         
         else {

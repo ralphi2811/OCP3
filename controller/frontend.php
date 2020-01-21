@@ -115,11 +115,11 @@ function updatePassword($userId, $password) {
         $affectedLines = $userManager->userUpdatePassword($userId, hashPassword($password));
     
         if ($affectedLines === false) {
-        throw new Exception('Modification Impossible contactez l\'administrateur');
+            throw new Exception('Modification Impossible contactez l\'administrateur');
         }
         else {
-        $_SESSION['message'] = "Mot de passe changé";
-        header('Location: index.php');               
+            $_SESSION['message'] = "Mot de passe changé";
+            header('Location: index.php');               
         }
     }
 
@@ -143,12 +143,42 @@ function actor($id_acteur) {
     $comments = $commentManager->getComments($id_acteur);
     $likes = $voteManager->countVotePositif($id_acteur);
     $disLikes = $voteManager->countVoteNegatif($id_acteur);
+    $counterComments = $commentManager->countComments($id_acteur);
     
     if ($actor['id_acteur'] < 1) {
         throw new Exception('Aucun acteur avec cet id');
     }
     else {
         require 'view/frontend/actorView.php'; // page acteur
+    }
+    
+}
+
+function addComment($user_id, $id_acteur , $comment) {
+    $commentManager = new \Sixkreation\Ocp3\Model\CommentManager();
+    
+    $result = $commentManager->postComment($user_id, $id_acteur, htmlspecialchars($comment));
+    
+    if ($result === false) {
+        throw new Exception('Impossible d\'ajouter le commentaire');
+    }
+    else {
+        $_SESSION['message'] = "Merci pour votre commentaire";
+        header('Location: index.php?action=actor&id=' . $id_acteur);
+    }
+        
+}
+
+function addVote($id_actor, $id_user, $vote) {
+    $voteManager = new \Sixkreation\Ocp3\Model\VoteManager();
+    
+    // check if vote exist
+    $voteExist = $voteManager->existVote($id_actor, $id_user);
+    if ($voteExist['exist'] > 0) {
+        // Vote already exist -> Update
+    }
+    else {
+        // Add new vote
     }
     
 }

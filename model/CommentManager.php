@@ -21,5 +21,16 @@ class CommentManager extends Manager {
         return $comments;
     }
     
+    public function countComments($actorId) {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT COUNT(*) AS countcom FROM `post` WHERE id_acteur=?');
+        $req->execute(array($actorId));
+        
+        $counter = $req->fetch();
+        
+        return $counter;
+        
+    }
+    
     // In futurte add function Comment Modification / delete
 }

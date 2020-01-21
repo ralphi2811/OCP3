@@ -17,17 +17,17 @@
             </p>
         </div>
         <div class="container-commentaires">
-            <p>Commentaires <i class="fas fa-comments"></i></p>
+            <p><?= $counterComments['countcom'] ?> Commentaires <i class="fas fa-comments"></i></p>
             <div class="vote">                
                 <div class="vote-button">
-                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;action=like"><i class="fas fa-thumbs-up"></i><?= $likes['v_like'] ?></a>
-                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;action=dislike"><i class="fas fa-thumbs-down"></i><?= $disLikes['v_dislike'] ?></a>
+                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;vote=like"><i class="fas fa-thumbs-up"></i><?= $likes['v_like'] ?></a>
+                    <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;vote=dislike"><i class="fas fa-thumbs-down"></i><?= $disLikes['v_dislike'] ?></a>
                 </div>
                 <button class="button">Nouveau commentaire</button>
             </div>
             <div class="nouveau-commentaire">
-                <form class="form-commentaire">
-                    <input type="textarea" name="commentaire" placeholder="Saisissez votre commentaire" required="">
+                <form action="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;comment=new" method="post">
+                    <input type="textarea" name="commentaire" placeholder="Saisissez votre commentaire" required>
                     <input type="submit" class="button" value="VALIDER">
                 </form>
             </div>
