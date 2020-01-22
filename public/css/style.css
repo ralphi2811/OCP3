@@ -98,7 +98,7 @@ i.far.fa-user-circle {
   font-size: 14px;
 }
 
-.form .button, {
+.form .button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
@@ -204,7 +204,6 @@ body {
 
 .actor-light img {
     width: 300px;
-    margin: 5px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px 5px 5px 30px;
 }
@@ -219,7 +218,15 @@ body {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px 5px 5px 5px;
     margin-bottom: 10px;
+    
 
+}
+
+.actor-content {
+    display: flex;
+    margin: 10px 10px 10px 10px;
+    
+    
 }
 
 .bouton-next {
@@ -271,8 +278,10 @@ body {
 }
 
 .description {
-    margin: 10px 5px 5px 10px
-    
+    margin-left: 10px;
+    margin-top: -17px;
+    margin-right: 10px;
+    min-width: 50%;
 }
 
 .vote-thumb {
@@ -307,6 +316,8 @@ body {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     border-radius: 5px 5px 5px 5px;
 }
+
+
 
 
 
@@ -397,6 +408,15 @@ ul a {
 
 
 /*******************************************************************************RESPONSIVE*******************************************************************************/
+/**** Tablettes (1000px) ****/
+@media screen and (max-width: 1000px) {
+    .gbaf-container, .footer, .header {
+         width: 90%;
+         
+    }
+}
+
+/**** Smartphones (600px) ****/
 @media screen and (max-width: 600px) {
     
     .header {
@@ -435,5 +455,16 @@ ul a {
         width: 100%;
     }
     
+    .actor-content {
+        flex-direction: column;
+        margin-right: 0px;
+    }
+    
+    .description {
+        margin-right: 10px;
+    }
 
 }
+
+
+    

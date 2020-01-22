@@ -18,12 +18,16 @@
                 while ($data = $actors->fetch()) {
             ?>
             <div class="actor-light">
-                <img src="public/images/<?= $data['logo'] ?>" alt="<?= $data['acteur'] ?> logo">
-                <p class="description">
-                    <h3><?= $data['acteur'] ?></h3><br>
-                    <?= nl2br($data['description']) ?> ...
-                </p>
-                <a class="bouton-next" href="index.php?action=actor&amp;id=<?= $data['id_acteur'] ?>"> Lire la suite</a>
+                <div class="actor-content">
+                    <div class="actor-logo">
+                        <img src="public/images/<?= $data['logo'] ?>" alt="<?= $data['acteur'] ?> logo">
+                    </div>                    
+                    <div class="description">
+                        <h3><?= $data['acteur'] ?></h3>
+                        <p><?= nl2br($data['description']) ?> </p>
+                    </div>
+                </div>
+                <a class="bouton-next" href="index.php?action=actor&amp;id=<?= $data['id_acteur'] ?>"> Afficher la suite</a>
             </div>
             <?php 
             } 
