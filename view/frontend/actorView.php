@@ -23,9 +23,9 @@
                     <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;vote=like"><i class="fas fa-thumbs-up"></i> <?= $likes['v_like'] ?></a>
                     <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;vote=dislike"><i class="fas fa-thumbs-down"></i> <?= $disLikes['v_dislike'] ?></a>
                 </div>
-                <button class="button">Nouveau commentaire</button>
+                <button onclick="displaycomments()" class="button">Nouveau commentaire</button>
             </div>
-            <div class="nouveau-commentaire">
+            <div id="hidden-div" class="nouveau-commentaire">
                 <form class="form-commentaire" action="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;comment=new" method="post">
                     <textarea name="commentaire" placeholder="Saisissez votre commentaire" required></textarea>
                     <input type="submit" class="button" value="VALIDER">
@@ -51,6 +51,7 @@
 </div>
 
 <?php include("footer.php"); ?>
+<script src="../../public/js/displaycomments.js"></script>
 <?php $content = ob_get_clean(); ?>
 
 <?php require 'template.php'; ?>

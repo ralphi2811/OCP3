@@ -347,7 +347,7 @@ body {
 
 /********DIV COMMENT *********/
 
-.nouveau-commentaire {
+#hidden-div {
     display: none;
 }
 

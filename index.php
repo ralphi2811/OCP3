@@ -4,7 +4,7 @@ session_start();
 require 'controller/frontend.php';
 
 try {
-        
+            
     if (isset ($_GET['action'])) {
         if ($_GET['action'] === 'register') {
             if(isset($_POST['surname'])) {
@@ -84,7 +84,11 @@ try {
         }
         
         elseif ($_GET['action'] === 'actor' && isset ($_GET['id'])) {
-            if (isset($_GET['comment']) && $_GET['comment'] === 'new') {
+            if ($_SESSION['userId'] < 1 ) {
+                loginUser();
+            }
+            
+            elseif (isset($_GET['comment']) && $_GET['comment'] === 'new') {
                 addComment($_SESSION['userId'], $_GET['id'], $_POST['commentaire']);
             }
             
