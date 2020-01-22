@@ -345,10 +345,12 @@ body {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-/********DIV COMMENT *********/
+/********DIV NEW COMMENT *********/
 
 #hidden-div {
     display: none;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
 .form-commentaire {
