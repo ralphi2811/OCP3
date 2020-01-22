@@ -325,10 +325,51 @@ body {
     margin-bottom: 10px;
 }
 
-.nouveau-commentaire form {
-    display: none;
+
+
+ .button {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background: #F2D6AE;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    margin-right: 10px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+/********DIV COMMENT *********/
+
+.form-commentaire {
+    text-align: center;
+    display: flex;
     flex-direction: column;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+}
+
+.form-commentaire input {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     
+}  
+
+textArea {
+    font-family: "Roboto", sans-serif;
+    min-height: 50px;
+    resize: none;
+    margin: 10px 10px 10px 10px;
+    border: 0;
 }
 
 
