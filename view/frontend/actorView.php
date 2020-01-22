@@ -17,7 +17,7 @@
             </p>
         </div>
         <div class="container-commentaires">
-            <p><?= $counterComments['countcom'] ?> Commentaires <i class="fas fa-comments"></i></p>
+            <p class="commentaires-counter"><?= $counterComments['countcom'] ?> Commentaires <i class="fas fa-comments"></i></p>
             <div class="vote">                
                 <div class="vote-button">
                     <a class="vote-thumb" href="index.php?action=actor&amp;id=<?= $actor['id_acteur'] ?>&amp;vote=like"><i class="fas fa-thumbs-up"></i><?= $likes['v_like'] ?></a>
