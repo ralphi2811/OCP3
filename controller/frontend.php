@@ -7,18 +7,22 @@ require_once 'model/VoteManager.php';
 
 require_once 'control.php';
 
+// DISPLAY LOGIN VIEW
 function loginUser(){
     require 'view/frontend/loginView.php';
 }
 
+// DISPLAY CREATE USER VIEW
 function createUser() {
     require 'view/frontend/createAccountView.php';
 }
 
+// DISPLAY LOST PASSWORD VIEW
 function lostPassword() {
     require 'view/frontend/resetPasswordView.php';
 }
 
+// ADD USER IF NOT EXIST
 function addUser($surname, $name, $username, $password, $question, $anwser) {
     
     if (userExist($username) === false) {
@@ -44,12 +48,15 @@ function addUser($surname, $name, $username, $password, $question, $anwser) {
     }
 }
 
+
+// LOGOUT USER
 function logout() {
     // VOIR unset()
     $_SESSION = array();
     header('Location: index.php');
 }
 
+// CHECK IF USER ALREADY EXITS
 function userExist($username) {
     $userManager = new \Sixkreation\Ocp3\Model\UserManager();
     $result = $userManager->userExist($username);
@@ -64,6 +71,7 @@ function userExist($username) {
     }   
 }
 
+// LOGIN FUNCTION
 function login($username, $password) {
     $userManager = new \Sixkreation\Ocp3\Model\UserManager();
     $result = $userManager->userLogin($username, hashPassword($password));
@@ -91,6 +99,7 @@ function login($username, $password) {
     
 }
 
+// CHECK IF ANSWER & QUESTION IS OK
 function checkAnswer($username, $question, $answer) {
     $userManager = new \Sixkreation\Ocp3\Model\UserManager();
     $result = $userManager->userLostPassword(secureUserInput($username), $question, secureString($answer));
@@ -106,6 +115,7 @@ function checkAnswer($username, $question, $answer) {
     }
 }
 
+// UPDATE PASSWORD
 function updatePassword($userId, $password) {
     if (passwordLength($password) === false) {
         throw new Exception('Longueur du mot de passe invalide');
@@ -126,6 +136,7 @@ function updatePassword($userId, $password) {
     
 }
 
+// INIT ACTORS PAGE
 function listActors() {
     $actorManager = new \Sixkreation\Ocp3\Model\ActeurManager();
     $actors = $actorManager->getActors();
@@ -134,6 +145,7 @@ function listActors() {
     
 }
 
+// INIT ACTOR PAGE & ROUTE
 function actor($id_acteur) {
     $actorManager = new \Sixkreation\Ocp3\Model\ActeurManager();
     $commentManager = new \Sixkreation\Ocp3\Model\CommentManager();
@@ -154,6 +166,7 @@ function actor($id_acteur) {
     
 }
 
+// ADD COMMENT
 function addComment($user_id, $id_acteur , $comment) {
     $commentManager = new \Sixkreation\Ocp3\Model\CommentManager();
     
@@ -168,7 +181,7 @@ function addComment($user_id, $id_acteur , $comment) {
     }
         
 }
-
+// ADD OR EDIT VOTE
 function addVote($id_actor, $id_user, $vote) {
     $voteManager = new \Sixkreation\Ocp3\Model\VoteManager();
     
