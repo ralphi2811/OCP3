@@ -126,8 +126,14 @@ try {
         }
         
         elseif ($_GET['action'] === 'legal') {
-            // ROUTE TO LEGAL VIEW
-            legal();
+            if ($_SESSION['userId'] < 1 ) {
+                loginUser();
+            }
+            else {
+                // ROUTE TO LEGAL VIEW
+                legal();  
+            }
+            
         }
         
         else {
