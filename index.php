@@ -108,6 +108,23 @@ try {
              
         }
         
+        elseif ($_GET['action'] === 'contact') {
+            if ($_SESSION['userId'] < 1 ) {
+                loginUser();
+            }
+            elseif (isset ($_POST['message']) && isset ($_POST['name']) && isset ($_POST['email'])) {
+                if (!empty($_POST['message']) && !empty($_POST['name']) && !empty($_POST['email'])) {
+                    // SEND MAIL FUNCTION
+                    newMessage($_POST['email'], $_POST['name'], $_POST['message']);
+                }
+            }
+            
+            else {
+                // VIEW TO CONTACT FORM
+                contact();
+            }
+        }
+        
         else {
             throw new Exception('Action non autorisée');
         }

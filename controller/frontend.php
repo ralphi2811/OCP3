@@ -203,3 +203,33 @@ function addVote($id_actor, $id_user, $vote) {
     }
     
 }
+// VIEW CONTACT FORM
+function contact() {
+    require 'view/frontend/contactView.php';
+}
+
+// SEND EMAIL 
+function sendEmail($from,$to,$subject,$message) {
+    $header = 'From:' .$from;
+    
+    $result = mail($to,$subject,$message,$header);
+    return $result;
+}
+
+
+// SEND MAIL FROM CONTACT FORM
+function newMessage($email,$name,$message) {
+    $from = 'nepasrepondre@6kreation.com';
+    $to = 'raphael@6kreation.com';
+    $subject = 'GBAF - MESSAGE de '. $name;
+    $messageMail = 'E-mail : ' . $email . ' Message : ' .$message;
+    $result = sendEmail($from, $to, $subject, $messageMail);
+    
+    if ($result === false) {
+        throw new Exception('Envoi du mail Impossible...');
+    }
+    else {
+        $_SESSION['message'] = 'Email bien envoyé.';
+        header('Location: index.php');
+    }
+}

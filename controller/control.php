@@ -1,17 +1,19 @@
 <?php
-
+// RETURN SALTED PASSWORD
 function hashPassword($password) {
     $salage = 'oCpFstackP3';
     $salted_password = "$password$salage";
     return hash('sha256', $salted_password);
 }
 
+// RETURN SECURED STRING (PREVENT XSS INJECTION)
 function secureString($string) {
     // prevent xss injection
     $secured_string = htmlspecialchars($string);
     return $secured_string;
 }
 
+// CHECK IF STRING RESPECT RULES
 function secureUserInput($string) {
     // check length of string
     $lenString = strlen($string);
@@ -29,6 +31,7 @@ function secureUserInput($string) {
     }
 }
 
+// CHECK IF PASSWORD LENGHT IS CORRECT
 function passwordLength($password) {
     if (strlen($password) >= 6) {
         return true;
