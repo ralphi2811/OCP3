@@ -246,3 +246,8 @@ function newMessage($email,$name,$message) {
         header('Location: index.php');
     }
 }
+
+// DISPLAY LEGAL VIEW
+function legal() {
+    require 'view/frontend/legalView.php';
+}

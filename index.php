@@ -125,6 +125,11 @@ try {
             }
         }
         
+        elseif ($_GET['action'] === 'legal') {
+            // ROUTE TO LEGAL VIEW
+            legal();
+        }
+        
         else {
             throw new Exception('Action non autorisée');
         }
