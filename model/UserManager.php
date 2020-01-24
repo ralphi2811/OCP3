@@ -44,7 +44,7 @@ class UserManager extends Manager
         return $affectedlines;
     }
     
-    public function userUpdateData($userId, $username, $surname, $name, $password, $question, $anwser) {
+    public function userUpdateData($userId, $username, $surname, $name, $question, $anwser) {
         $db = $this->dbConnect();
         $modUser = $db->prepare('UPDATE `account` SET `nom`=?,`prenom`=?,`username`=?,`question`=?,`reponse`=? WHERE id_user=?');
         $affectedlines = $modUser->execute(array($surname, $name, $username, $question, $anwser, $userId ));

@@ -140,6 +140,24 @@ try {
             if ($_SESSION['userId'] < 1 ) {
                 loginUser();
             }
+            
+            elseif (isset ($_GET['user']) && $_GET['user'] === 'update') {
+                if (!empty($_POST['surname']) && !empty($_POST['name']) && !empty($_POST['username']) && !empty($_POST['question']) && !empty($_POST['answer'])) {
+                    // USER DATA MODIFICATION
+                    updateUserData($_POST['surname'], $_POST['name'], $_POST['username'], $_POST['question'], $_POST['answer']);
+                }
+                else {
+                    $_SESSION['message'] = 'Un champ est vide, Modification impossible';
+                    myaccount();
+                }
+                
+            }
+            
+            elseif (isset ($_GET['password']) && $_GET['password'] === 'new' ) {
+                // ROUTE TO NEW PASSWORD FORM
+                userChangePassword();
+            }
+            
             else {
                 // ROUTE TO MYACCOUNT
                 myaccount();

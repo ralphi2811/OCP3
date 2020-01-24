@@ -174,6 +174,29 @@ function myaccount() {
     require 'view/frontend/userView.php';
 }
 
+// UPDATE ACCOUNT VIEW
+function updateUserData($surname,$name,$username,$question,$answer) {
+    $userManager = new \Sixkreation\Ocp3\Model\UserManager();
+    
+    $affectedLines = $userManager->userUpdateData($_SESSION['userId'], secureUserInput($username), secureUserInput($surname), secureUserInput($name), $question, secureString($answer));
+    if ($affectedLines === false) {
+        throw new Exception('Modification impossible');
+    }
+    else {
+        $_SESSION['name'] = secureUserInput($name);
+        $_SESSION['surname'] = secureString($surname);
+        $_SESSION['message'] = 'Modifications effectués';
+        
+        myaccount();
+        
+    }
+}
+
+// DISPLAY NEW PASSWORD FORM
+function userChangePassword() {
+    require 'view/frontend/userPasswordView.php';
+}
+
 // ADD COMMENT
 function addComment($user_id, $id_acteur , $comment) {
     $commentManager = new \Sixkreation\Ocp3\Model\CommentManager();
