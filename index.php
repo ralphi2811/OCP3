@@ -120,7 +120,7 @@ try {
             }
             
             else {
-                // VIEW TO CONTACT FORM
+                // ROUTE TO CONTACT FORM
                 contact();
             }
         }
@@ -134,6 +134,16 @@ try {
                 legal();  
             }
             
+        }
+        
+        elseif ($_GET['action'] === 'myaccount') {
+            if ($_SESSION['userId'] < 1 ) {
+                loginUser();
+            }
+            else {
+                // ROUTE TO MYACCOUNT
+                myaccount();
+            }
         }
         
         else {

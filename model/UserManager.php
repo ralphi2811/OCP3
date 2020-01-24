@@ -46,17 +46,18 @@ class UserManager extends Manager
     
     public function userUpdateData($userId, $username, $surname, $name, $password, $question, $anwser) {
         $db = $this->dbConnect();
-        $modPwd = $db->prepare('UPDATE `account` SET `nom`=?,`prenom`=?,`username`=?,`question`=?,`reponse`=? WHERE id_user=?');
-        $affectedlines = $modPwd->execute(array($surname, $name, $username, $question, $anwser, $userId ));
+        $modUser = $db->prepare('UPDATE `account` SET `nom`=?,`prenom`=?,`username`=?,`question`=?,`reponse`=? WHERE id_user=?');
+        $affectedlines = $modUser->execute(array($surname, $name, $username, $question, $anwser, $userId ));
         return $affectedlines;
     }
     
-    public function userViewData($id_user) {
+    public function userViewData($userId) {
         $db = $this->dbConnect();
         $req = $db->prepare('SELECT `id_user`,`nom`,`prenom`,`username`,`question`,`reponse`  FROM `account` WHERE id_user=?');
         $req->execute(array($userId));
-        $userArray = $req->fetch();
-        return $userArray;
+        
+        $userData = $req->fetch();
+        return $userData;
     }
         
 }

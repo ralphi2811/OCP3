@@ -99,7 +99,7 @@ function login($username, $password) {
     
 }
 
-// CHECK IF ANSWER & QUESTION IS OK
+// CHECK ANSWER / QUESTION
 function checkAnswer($username, $question, $answer) {
     $userManager = new \Sixkreation\Ocp3\Model\UserManager();
     $result = $userManager->userLostPassword(secureUserInput($username), $question, secureString($answer));
@@ -164,6 +164,14 @@ function actor($id_acteur) {
         require 'view/frontend/actorView.php'; // page acteur
     }
     
+}
+
+// INIT AND DISPLAY ACCOUNT VIEW
+function myaccount() {
+    $userManager = new \Sixkreation\Ocp3\Model\UserManager();
+    $userData = $userManager->userViewData($_SESSION['userId']);
+    
+    require 'view/frontend/userView.php';
 }
 
 // ADD COMMENT
@@ -251,3 +259,6 @@ function newMessage($email,$name,$message) {
 function legal() {
     require 'view/frontend/legalView.php';
 }
+
+
+
