@@ -2,6 +2,8 @@
 
 <?php ob_start(); ?>
 
+<?php $_SESSION['tempId'] = $_SESSION['userId'] ?>
+
 <?php include("header.php"); ?>
 <div class="gbaf-container">
     <div class="login-page">

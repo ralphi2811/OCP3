@@ -47,6 +47,9 @@ try {
                     }
                     
                 }
+                else {
+                    throw new Exception("Procédure invalide..." );
+                }
             }
             
             else {
