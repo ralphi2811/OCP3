@@ -1,10 +1,10 @@
-<?php $title = 'Nouveau mot de passe'; ?>
+<?php $title = 'GBAF - Nouveau mot de passe'; ?>
 
 <?php ob_start(); ?>
 <div class="login-page">
+    <h2>Nouveau mot de passe</h2>
     <div class="form">
         <form class="login-form" action="index.php?action=lostpassword" method="post">
-            <p>Nouveau mot de passe</p>
             <input type="password" name="password" placeholder="Nouveau mot de passe" required minlength="6"/>
             <input type="password" name="password_check" placeholder="Vérifiez le mot de passe" required onblur="checkpassword()"/>
             <input class="button" type="submit" value="VALIDER">

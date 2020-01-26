@@ -1,7 +1,8 @@
-<?php $title = 'Créer un compte'; ?>
+<?php $title = 'GBAF - Créer un compte'; ?>
 
 <?php ob_start(); ?>
 <div class="login-page">
+    <h2>Créer un compte</h2>
     <div class="form">
         <form action="index.php?action=register" method="post" class="login-form">
             <input type="text" name="surname" placeholder="Nom" required maxlength="15" minlength="4"/>

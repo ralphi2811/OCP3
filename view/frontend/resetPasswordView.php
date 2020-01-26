@@ -1,10 +1,10 @@
-<?php $title = 'Réinitialisation mot de passe'; ?>
+<?php $title = 'GBAF - Réinitialisation mot de passe'; ?>
 
 <?php ob_start(); ?>
 <div class="login-page">
+    <h2>Mot de passe perdu ?</h2>
     <div class="form">
         <form class="login-form" action="index.php?action=lostpassword" method="post">
-            <p>Mot de passe perdu ?</p>
             <input type="text" name="username" placeholder="Login" required minlength="4" maxlength="15"/>
             <select name="question" required>
                 <option value="">-- Question Secrète --</option>
