@@ -12,9 +12,9 @@
     <body>
         
         <?= $content ?>
-        
+
         <?php include("snackbar.php"); ?>
-        
+            
     </body>
 </html>
 
