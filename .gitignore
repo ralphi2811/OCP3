@@ -1,5 +1,5 @@
 nbproject
-config
+config/database.php
 /nbproject/private/
 test.php
 test2.php

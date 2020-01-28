@@ -1,0 +1,12 @@
+<?php
+
+function dbconnect()
+{    
+    
+    try {
+        $bdd = new PDO('mysql:host=adresse_database;dbname=nom_database;charset=utf8', 'login_database', 'password_database');
+        return $bdd;
+    } catch (Exception $ex) {
+        die('Erreur : '.$ex->getMessage());
+    }
+}
