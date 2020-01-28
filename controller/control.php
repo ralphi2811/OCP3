@@ -22,7 +22,7 @@ function secureUserInput($string) {
         throw new Exception("Taille du champ Login, Nom ou Prénom non conforme, création de l'utilisateur impossible");
     }
     // check if string use illegal characters
-    elseif (preg_match("#[ \t\n\x0B\f\r\<\>\\\/]#", $string)) {
+    elseif (preg_match("#[^\w]#", $string)) {
         throw new Exception("Utilisation de caractères illégaux. Création de l'utilisateur impossible.");
     }
     // if all is good return secure string
