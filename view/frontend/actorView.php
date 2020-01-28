@@ -10,7 +10,7 @@
             <img class="presentation-logo "src="/public/images/<?= $actor['logo'] ?>" alt="logo <?= $actor['acteur'] ?>">
         </div>
         <div class="description">
-            <h2><strong><?= $actor['acteur'] ?></strong></h2>
+            <h1><?= $actor['acteur'] ?></h1>
             <a href="#">Lien vers <?= $actor['acteur'] ?></a>
             <p class="description-longue">
                 <?= nl2br($actor['description']) ?>

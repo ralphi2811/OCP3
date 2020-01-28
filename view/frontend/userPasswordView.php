@@ -7,7 +7,7 @@
 <?php include("header.php"); ?>
 <div class="gbaf-container">
     <div class="login-page">
-        <h2>Changer de mot de passe</h2>
+        <h1>Changer de mot de passe</h1>
         <div class="form">
             <form class="login-form" action="index.php?action=lostpassword" method="post">
                 <input type="password" name="password" placeholder="Nouveau mot de passe" required minlength="6"/>

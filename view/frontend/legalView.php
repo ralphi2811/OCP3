@@ -6,7 +6,7 @@
 
 <div class="gbaf-container">
     <div class="login-page">
-        <h2>Mentions légales</h2>
+        <h1>Mentions légales</h1>
         <div class="form">
             <p><h3>Hébergeur :</h3></p>
             <p>Site hébergé chez OVH SAS<br></p>

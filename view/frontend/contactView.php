@@ -6,7 +6,7 @@
 
 <div class="gbaf-container">
     <div class="login-page">
-        <h2>Contactez nous</h2>
+        <h1>Contactez nous</h1>
         <div class="form">
             <form class="login-form" action="index.php?action=contact" method="post">
                 <input type="text" name="name" placeholder="Saisissez votre Nom et Prénom" value="<?= ucfirst($_SESSION['surname']) ?> <?= ucfirst($_SESSION['name']) ?>" required/>

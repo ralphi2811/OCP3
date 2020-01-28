@@ -2,7 +2,7 @@
 
 <?php ob_start(); ?>
 <div class="login-page">
-    <h2>Mot de passe perdu ?</h2>
+    <h1>Mot de passe perdu ?</h1>
     <div class="form">
         <form class="login-form" action="index.php?action=lostpassword" method="post">
             <input type="text" name="username" placeholder="Login" required minlength="4" maxlength="15"/>

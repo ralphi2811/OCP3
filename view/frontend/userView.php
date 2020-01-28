@@ -5,7 +5,7 @@
 <?php include("header.php"); ?>
 <div class="gbaf-container">
     <div class="login-page">
-        <h2>Mon compte</h2>
+        <h1>Mon compte</h1>
         <div class="form">
             <form class="login-form" action="index.php?action=myaccount&amp;user=update" method="post">
                 <label for="surname">Nom</label>
