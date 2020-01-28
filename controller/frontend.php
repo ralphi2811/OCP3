@@ -197,19 +197,36 @@ function userChangePassword() {
     require 'view/frontend/userPasswordView.php';
 }
 
-// ADD COMMENT
+// ADD OR EDIT COMMENT
 function addComment($user_id, $id_acteur , $comment) {
     $commentManager = new \Sixkreation\Ocp3\Model\CommentManager();
     
-    $result = $commentManager->postComment($user_id, $id_acteur, htmlspecialchars($comment));
+    // chech if comment already exist
+    $commentExist = $commentManager->existComment($user_id, $id_acteur);
+    if ($commentExist['exist'] === '0') {
+        $result = $commentManager->postComment($user_id, $id_acteur, htmlspecialchars($comment));
     
-    if ($result === false) {
-        throw new Exception('Impossible d\'ajouter le commentaire');
+        if ($result === false) {
+            throw new Exception('Impossible d\'ajouter le commentaire');
+        }
+        else {
+            $_SESSION['message'] = "Merci pour votre commentaire";
+            header('Location: index.php?action=actor&id=' . $id_acteur);
+        }
     }
     else {
-        $_SESSION['message'] = "Merci pour votre commentaire";
-        header('Location: index.php?action=actor&id=' . $id_acteur);
+        $result = $commentManager->updateComment($user_id, $id_acteur, htmlspecialchars($comment));
+    
+        if ($result === false) {
+            throw new Exception('Impossible de modifier le commentaire');
+        }
+        else {
+            $_SESSION['message'] = "Votre commentaire a été modifié";
+            header('Location: index.php?action=actor&id=' . $id_acteur);
+        }
     }
+    
+
         
 }
 // ADD OR EDIT VOTE

@@ -32,5 +32,22 @@ class CommentManager extends Manager {
         
     }
     
-    // In futurte add function Comment Modification / delete
+    public function existComment($id_user,$id_acteur) {
+        $db = $this->dbConnect();
+        $req = $db->prepare('SELECT COUNT(*) as exist FROM `post` WHERE id_user=? && id_acteur=?');
+        $req->execute(array($id_user,$id_acteur));
+        $exist = $req->fetch();
+        
+        return $exist;
+    }
+    
+    public function updateComment($user_id, $id_acteur , $comment) {
+        $db = $this->dbConnect();
+        $post = $db->prepare('UPDATE `post` SET `post`=? WHERE id_user=? && id_acteur=?');
+        $affectedLines = $post->execute(array($comment,$user_id,$id_acteur));
+        
+        return $affectedLines;
+    }
+    
+    
 }
