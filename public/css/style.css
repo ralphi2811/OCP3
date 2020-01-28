@@ -222,7 +222,7 @@ body {
 .actor-container {
     margin: 10px 10px 10px 10px;
     margin-bottom: 10px;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    /*box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);*/
     border-radius: 5px 5px 5px 5px;
 }
 
@@ -278,8 +278,8 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     overflow: hidden;
-    background-color: #f2f2f2;
-    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    background-color: #fff;
+    box-shadow: 5px 5px 5px 0px rgba(178, 178, 178, 0.40);
     border-radius: 5px 5px 5px 5px;
 }
 
