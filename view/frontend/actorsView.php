@@ -17,7 +17,7 @@
             <?php
                 while ($data = $actors->fetch()) {
             ?>
-            <div class="actor-light">
+            <div class="actor-light" onclick="window.location.href='index.php?action=actor&amp;id=<?= $data['id_acteur'] ?>'" >
                 <div class="actor-content">
                     <div class="actor-logo">
                         <img src="public/images/<?= $data['logo'] ?>" alt="<?= $data['acteur'] ?> logo">
