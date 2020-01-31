@@ -187,7 +187,7 @@ try {
             header('Location: index.php?action=actors');
         }
         else {
-            // affichege page login
+            // affiche page login
             loginUser(); 
         }
     
