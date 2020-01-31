@@ -4,7 +4,7 @@ session_start();
 require 'controller/frontend.php';
 
 try {
-            
+    // REGISTER        
     if (isset ($_GET['action'])) {
         if ($_GET['action'] === 'register') {
             if(isset($_POST['surname'])) {
@@ -30,6 +30,7 @@ try {
             
             
         }
+        // LOST PASSWORD
         elseif ($_GET['action'] === 'lostpassword') {
             if (isset($_POST['username']) && isset($_POST['question']) && isset($_POST['answer'])) {
                 // function checkAnswer & redirect to changePassword
@@ -58,6 +59,7 @@ try {
             }
         }
         
+        // LOGOUT
         elseif ($_GET['action'] === 'logout' ) {
             logout();
         } 
@@ -73,6 +75,7 @@ try {
             }
         }
         
+        // ROUTE TO ACTORS LIST (IF USER AUTENTIFIED)
         elseif ($_GET['action'] === 'actors') {
             if (isset($_SESSION['userId']) && $_SESSION['userId'] != 0 ) {
                 // redirection vers page accueil acteurs OLD VERSION
@@ -80,18 +83,21 @@ try {
                 listActors();
             }
             
+            // IF AUTENTIFICATION FAILLED -> ERROR
             else {
                 throw new Exception('Vous devez vous connecter pour visualiser cette page');
             }
             
         }
         
+        // ACTOR ACTIONS
         elseif ($_GET['action'] === 'actor' && isset ($_GET['id'])) {
             if ($_SESSION['userId'] < 1 ) {
                 loginUser();
             }
             
             elseif (isset($_GET['comment']) && $_GET['comment'] === 'new') {
+                // comment actor
                 addComment($_SESSION['userId'], $_GET['id'], $_POST['commentaire']);
             }
             
@@ -106,11 +112,13 @@ try {
             }
             
             else {
+                // just vie actor details
                 actor($_GET['id']);
             }
              
         }
         
+        // CONTACT ACTIONS
         elseif ($_GET['action'] === 'contact') {
             if ($_SESSION['userId'] < 1 ) {
                 loginUser();
@@ -128,6 +136,7 @@ try {
             }
         }
         
+        // LEGALS ACTIONS
         elseif ($_GET['action'] === 'legal') {
             if ($_SESSION['userId'] < 1 ) {
                 loginUser();
@@ -139,6 +148,7 @@ try {
             
         }
         
+        // USER ACCOUNT ACTIONS
         elseif ($_GET['action'] === 'myaccount') {
             if ($_SESSION['userId'] < 1 ) {
                 loginUser();
