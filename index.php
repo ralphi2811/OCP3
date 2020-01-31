@@ -78,8 +78,6 @@ try {
         // ROUTE TO ACTORS LIST (IF USER AUTENTIFIED)
         elseif ($_GET['action'] === 'actors') {
             if (isset($_SESSION['userId']) && $_SESSION['userId'] != 0 ) {
-                // redirection vers page accueil acteurs OLD VERSION
-                //require 'view/frontend/actorsView.php';
                 listActors();
             }
             

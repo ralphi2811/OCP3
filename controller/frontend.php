@@ -39,10 +39,7 @@ function addUser($surname, $name, $username, $password, $question, $anwser) {
         }
     }
     else {
-        // old version 
-        // throw new Exception('Utilisateur déja existant');
         
-        // new version
         $_SESSION['message'] = "Utilisateur dejà existant";
         require 'view/frontend/createAccountView.php';
     }
